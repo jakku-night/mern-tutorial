@@ -4,6 +4,7 @@ const fileupload = require('express-fileupload');
 const db = require('./db');
 const db_dump = require('./lib/mysql_backup');
 const backup = require('backup');
+const test = require('./routes/index');
 
 const app = express();
 
@@ -20,10 +21,10 @@ app.use(cors(corsOptions));
 app.use(fileupload());
 
 // Routes:
-
+app.use(test);
 
 // Startup:
-app.listen(app.get('port'), async ()=>{
+app.listen(app.get('port'), async () => {
     console.log('SERVER ON PORT ', app.get('port'));
     try{
       await db_dump();
