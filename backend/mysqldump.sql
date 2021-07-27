@@ -7,6 +7,16 @@
 /*!40111 SET @OLD_SQL_NOTES=@@SQL_NOTES, SQL_NOTES=0 */;
 
 # ------------------------------------------------------------
+# SCHEMA DUMP FOR TABLE: products
+# ------------------------------------------------------------
+
+CREATE TABLE IF NOT EXISTS `products` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `product` text NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE = InnoDB AUTO_INCREMENT = 9 DEFAULT CHARSET = utf8mb4;
+
+# ------------------------------------------------------------
 # SCHEMA DUMP FOR TABLE: test
 # ------------------------------------------------------------
 
@@ -14,7 +24,44 @@ CREATE TABLE IF NOT EXISTS `test` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `text` text DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE = InnoDB DEFAULT CHARSET = utf8mb4;
+) ENGINE = InnoDB AUTO_INCREMENT = 2 DEFAULT CHARSET = utf8mb4;
+
+# ------------------------------------------------------------
+# DATA DUMP FOR TABLE: products
+# ------------------------------------------------------------
+
+INSERT INTO
+  `products` (`id`, `product`)
+VALUES
+  (1, 'Tomatoes');
+INSERT INTO
+  `products` (`id`, `product`)
+VALUES
+  (2, 'Carrots');
+INSERT INTO
+  `products` (`id`, `product`)
+VALUES
+  (3, 'Letouce');
+INSERT INTO
+  `products` (`id`, `product`)
+VALUES
+  (4, 'Beans');
+INSERT INTO
+  `products` (`id`, `product`)
+VALUES
+  (5, 'Watermelon');
+INSERT INTO
+  `products` (`id`, `product`)
+VALUES
+  (6, 'Apples');
+INSERT INTO
+  `products` (`id`, `product`)
+VALUES
+  (7, 'Oranges');
+INSERT INTO
+  `products` (`id`, `product`)
+VALUES
+  (8, 'Pineapple');
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: test
