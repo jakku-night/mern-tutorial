@@ -6,6 +6,8 @@ const db_dump = require('./lib/mysql_backup');
 const backup = require('backup');
 const test = require('./routes/api/index');
 const products = require('./routes/api/products');
+const bodyParser = require('body-parser');
+const busboy = require('busboy');
 
 const app = express();
 
@@ -19,9 +21,9 @@ app.use(express.static('public'));
 
 // Middlewares:
 app.use(cors(corsOptions));
-app.use(fileupload());
+app.use(fileupload({debug: true}));
 app.use((req, res, next) => {
-  console.log(req.protocol.toUpperCase(), req.method.toUpperCase(), req.url, req.headers, req.body);
+  console.log(req.protocol.toUpperCase(), req.method.toUpperCase(), req.url);
   next();
 });
 

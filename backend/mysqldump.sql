@@ -54,14 +54,6 @@ INSERT INTO
   `products` (`id`, `product`)
 VALUES
   (6, 'Apples');
-INSERT INTO
-  `products` (`id`, `product`)
-VALUES
-  (7, 'Oranges');
-INSERT INTO
-  `products` (`id`, `product`)
-VALUES
-  (8, 'Pineapple');
 
 # ------------------------------------------------------------
 # DATA DUMP FOR TABLE: test

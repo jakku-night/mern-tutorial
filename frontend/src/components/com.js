@@ -6,18 +6,14 @@ const Com = () => {
     const get_data = async (event) => {
         event.preventDefault();
         var form = new FormData(event.currentTarget);
-        var link = event.currentTarget.action;
-        console.log(form.get('id'));
-        console.log(form.get('product'));
-        console.log(link);
-        const res = await fetch(link, {
-            method: 'PUT',
+        const res = await fetch(event.target.action + form.get('id') + '/', {
+            method: 'GET',
             mode: 'cors',
             headers: {
                 'Access-Control-Allow-Origin': '*',
-                'Content-Type': 'multipart/form-data'
+                //'Content-Type': 'multipart/form-data'
             },
-            body: form
+            //body: form
         });
         const data = await res.json();
         setProduct(data);
