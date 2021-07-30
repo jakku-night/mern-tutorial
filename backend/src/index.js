@@ -7,7 +7,8 @@ const backup = require('backup');
 const test = require('./routes/api/index');
 const products = require('./routes/api/products');
 const bodyParser = require('body-parser');
-const busboy = require('busboy');
+const SocketIO = require('socket.io');
+const { globalAgent } = require('http');
 
 const app = express();
 
@@ -32,7 +33,7 @@ app.use(test);
 app.use(products);
 
 // Startup:
-app.listen(app.get('port'), async () => {
+const Server = app.listen(app.get('port'), async () => {
     console.log('SERVER ON PORT ', app.get('port'));
     try{
       await db_dump();
@@ -40,5 +41,11 @@ app.listen(app.get('port'), async () => {
     }catch(error){
       console.error(error);
     }
+});
 
+// Websockets:
+const io = SocketIO(Server);
+
+io.on('connection', (socket) => {
+  console.log('HOLA!');
 });
